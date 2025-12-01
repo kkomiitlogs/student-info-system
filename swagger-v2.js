@@ -40,9 +40,12 @@ const swaggerDefinition = {
 // Options for the swagger docs
 const options = {
   swaggerDefinition,
-  // Path to the API docs: all files containing OpenAPI annotations
-  // You might need to adjust this path based on your file structure
-  apis: ['./routes/v2/*.js', './models/*.js', './server.js'], 
+  // IMPORTANT: Ensure these paths match the new file structure (no 'src/' prefix)
+  apis: [
+    './routes/v2/*.js', // Assuming your route files are here
+    './models/*.js', 
+    './index.js' // Change to index.js if that is your main server file
+  ], 
 };
 
 // Initialize swagger-jsdoc
@@ -50,3 +53,4 @@ const swaggerSpec = swaggerJSDoc(options);
 
 
 export default swaggerSpec;
+
