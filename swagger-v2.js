@@ -42,7 +42,7 @@ const options = {
   swaggerDefinition,
   // IMPORTANT: Ensure these paths match the new file structure (no 'src/' prefix)
   apis: [
-    './routes/v2/*.js', // Assuming your route files are here
+    './routes/*.js', // Assuming your route files are here
     './models/*.js', 
     './index.js' // Change to index.js if that is your main server file
   ], 
@@ -53,4 +53,5 @@ const swaggerSpec = swaggerJSDoc(options);
 
 
 export default swaggerSpec;
+
 
