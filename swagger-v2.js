@@ -17,6 +17,21 @@ const swaggerDefinition = {
     },
   ],
   
+  tags: [ 
+        {
+            name: 'Students',
+            description: 'API for managing student records',
+        },
+        {
+            name: 'Courses',
+            description: 'API for managing course catalog',
+        },
+        {
+            name: 'Enrollment',
+            description: 'API for student enrollment and grades',
+        },
+    ],
+  
   // 1. ADD THE 'components' OBJECT HERE
   components: { // <--- ADDED OPENING BRACE
     
@@ -53,6 +68,7 @@ const swaggerSpec = swaggerJSDoc(options);
 
 
 export default swaggerSpec;
+
 
 
 
