@@ -1,21 +1,17 @@
 import express from "express";
 import swaggerUi from "swagger-ui-express";
-
 import { createRequire } from 'module';
+import studentRoutes from "./routes/studentRoutes.js";
+import courseRoutes from "./routes/courseRoutes.js";
+import enrollmentRoutes from "./routes/enrollmentRoutes.js";
+import { connectDB } from "./config/db.js";
+import dotenv from "dotenv";
+import cors from "cors";
+
+dotenv.config();
+
 const require = createRequire(import.meta.url);
 const swaggerDocument = require("./swagger.json");
-
-import studentRoutes from "./routes/studentRoutes.js"; // import student routes
-import courseRoutes from "./routes/courseRoutes.js"; // import course routes
-import enrollmentRoutes from "./routes/enrollmentRoutes.js"; // import enrollment routes
-
-import { connectDB } from "./config/db.js"; // connect to database
-
-import dotenv from "dotenv"; // load environment variables
-
-import cors from "cors"; // enable CORS and access frontend
-
-dotenv.config(); // configure environment variables
 
 const app = express();
 const PORT = process.env.PORT || 5001
@@ -36,3 +32,4 @@ app.use("/api/v2/enrollment", enrollmentRoutes);
 app.listen(PORT, () => {
   console.log("Server is running on port", PORT)
 })
+
