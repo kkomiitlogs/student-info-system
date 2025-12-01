@@ -12,7 +12,7 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: '${process.env.BASE_URL}/api/v2', 
+      url: `${process.env.BASE_URL}/api/v2`, 
       description: 'Render Cloud server for V2',
     },
   ],
@@ -54,4 +54,5 @@ const swaggerSpec = swaggerJSDoc(options);
 
 
 module.exports = swaggerSpec;
+
 
