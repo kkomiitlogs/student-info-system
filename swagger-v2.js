@@ -12,8 +12,8 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: '${process.env.BASE_URL}/api/v2', // Replace 3000 with your backend port and /api with your base route
-      description: 'Development server for V2',
+      url: '${process.env.BASE_URL}/api/v2', 
+      description: 'Render Cloud server for V2',
     },
   ],
   components: {
@@ -54,3 +54,4 @@ const swaggerSpec = swaggerJSDoc(options);
 
 
 module.exports = swaggerSpec;
+
