@@ -99,6 +99,10 @@ router.get("/:id", getStudent);
  * responses:
  * 200:
  * description: Student record updated successfully.
+ * content:
+ * application/json:
+ * schema:
+ * $ref: '#/components/schemas/Student'
  * 404:
  * description: Student not found.
  */
