@@ -182,7 +182,7 @@
           "required": true,
           "content": {
             "application/json": {
-              "example": { "courseCode": "CITEL13-18", "title": "IT Elective 3", "units": 3 }
+              "example": { "code": "CITEL13-18", "title": "IT Elective 3", "units": 3 }
             }
           }
         },
@@ -308,6 +308,7 @@
     }
   }
 }
+
 
 
 
