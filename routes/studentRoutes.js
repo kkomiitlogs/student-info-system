@@ -13,42 +13,42 @@ const router = express.Router();
 /**
  * @swagger
  * /api/v2/students:
- * get:
- * summary: Retrieve a list of all students
- * tags: ["Students"]
- * responses:
- * 200:
- * description: A list of students.
- * content:
- * application/json:
- * schema:
- * type: array
- * items:
- * $ref: '#/components/schemas/Student'
+ *   get:
+ *     summary: Retrieve a list of all students
+ *     tags: ["Students"]
+ *     responses:
+ *       200:
+ *         description: A list of students.
+ *         content:
+ *           application/json:
+ *            schema:
+ *             type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Student'
  */
 router.get("/", getAllStudent)
 
 /**
  * @swagger
  * /api/v2/students:
- * post:
- * summary: Create a new student record
- * tags: ["Students"]
- * requestBody:
- * required: true
- * content:
- * application/json:
- * schema:
- * $ref: '#/components/schemas/Student'
- * responses:
- * 201:
- * description: Student successfully created.
- * content:
- * application/json:
- * schema:
- * $ref: '#/components/schemas/Student'
- * 400:
- * description: Invalid input or data.
+ *   post:
+ *     summary: Create a new student record
+ *     tags: ["Students"]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Student'
+ *     responses:
+ *       201:
+ *         description: Student successfully created.
+ *         content:
+ *            application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Student'
+ *       400:
+ *          description: Invalid input or data.
  */
 router.post("/", createStudent);
 
