@@ -50,6 +50,7 @@ export async function enrollStudent(req, res) {
     }
 }
 
+// Function to handle POST /grade
 export async function gradeStudent(req, res) {
     try {
         const { studentId, courseCode, grade } = req.body;
