@@ -37,6 +37,9 @@ const router = express.Router();
  *                   code:
  *                     type: string
  *                     description: Course code
+ *                   units:
+ *                     type: string
+ *                     description: Course units
  */
 router.get("/", getAllCourse);
 
