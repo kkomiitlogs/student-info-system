@@ -24,7 +24,7 @@ export async function createCourse(req, res) {
 // done http response
 export async function getAllCourse(req, res) {
     try {
-        const courses = await Course.find();
+        const courses = await CourseInformation.find();
         res.status(200).json({message:"Successful getting courses", courses});
     } catch (error) {
         console.error("Error fetching course:", error);
@@ -38,7 +38,7 @@ export async function updateCourse(req, res) {
             // This function uses courseCode (req.params.id) to find the course
             const targetCourseCode = req.params.id;
             const {courseCode, title, units } = req.body;
-            const updatedCourse = await Course.findOneAndUpdate(
+            const updatedCourse = await CourseInformation.findOneAndUpdate(
                 { courseCode: targetCourseCode },
                 { courseCode, title, units},
                 { new: true }
@@ -60,7 +60,7 @@ export async function deleteCourse(req, res) {
     try {
         // This function uses courseCode (req.params.id) to find the course
         const targetCourseCode = req.params.id;
-        const deletedCourse = await Course.findOneAndDelete({ courseCode: targetCourseCode });
+        const deletedCourse = await CourseInformation.findOneAndDelete({ courseCode: targetCourseCode });
         if (!deletedCourse) {
             return res.status(404).json({ message: "Course not found" });
         }else{
