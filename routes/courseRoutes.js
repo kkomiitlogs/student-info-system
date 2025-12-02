@@ -34,7 +34,7 @@ const router = express.Router();
  *                   title:
  *                     type: string
  *                     description: Course title
- *                   code:
+ *                   courseCode:
  *                     type: string
  *                     description: Course code
  *                   units:
