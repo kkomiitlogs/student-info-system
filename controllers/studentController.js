@@ -4,7 +4,7 @@ import StudentIdGenerator from "../utils/studentIdGenerator.js";
 // done http response - Creates a student with an automatically generated studentId
 export async function createStudent(req, res) {
     try {
-        const {name, email} = req.body;
+        const {firstName, lastName, email} = req.body;
         // Use the imported StudentIdGenerator for the custom studentId
         const newStudent = new Student({ name, studentId: StudentIdGenerator(), email});
         const savedStudent = await newStudent.save();
