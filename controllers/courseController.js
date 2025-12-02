@@ -1,12 +1,20 @@
 import Course from '../models/course-information.js';
 
 // done http response
+// Inside ./controllers/courseController.js (createCourse)
 export async function createCourse(req, res) {
     try {
-        const {courseCode, title, units} = req.body;
-        const newCourse = new Course({ courseCode, title});
+        const { code, courseCode, title, units } = req.body;
+
+        const newCourse = new CourseInformation({ 
+            code,       // Now correctly populating 'code'
+            courseCode, // Now correctly populating 'courseCode'
+            title,
+            units 
+        });
+        
         const savedCourse = await newCourse.save();
-        res.status(201).json({message: "New Course created", savedCourse});
+        res.status(201).json({ message: "New Course created successfully", course: savedCourse});
     } catch (error) {
         console.error("Error creating course:", error);
         res.status(500).json({ message: "Server Error", error: error.message });
