@@ -1,5 +1,3 @@
-// swagger.js (create this file in your backend directory)
-
 import swaggerJSDoc from 'swagger-jsdoc';
 
 const swaggerDefinition = {
@@ -26,42 +24,79 @@ const swaggerDefinition = {
         },
     ],
   
-  // 1. ADD THE 'components' OBJECT HERE
-  components: { // <--- ADDED OPENING BRACE
+  components: { 
     
-    schemas: { // <--- 'schemas' is a property of 'components'
-      Student: {
-        type: 'object',
-        required: ['firstName', 'lastName'],
-        properties: {
-          id: { type: 'string', description: 'Student ID' },
-          firstName: { type: 'string', description: 'Student first name' },
-          lastName: { type: 'string', description: 'Student last name' },
-          email: { type: 'string', format: 'email' },
-        },
-      },
-    },
-    
-  }, // <--- ADDED CLOSING BRACE for 'components'
+    schemas: {
+  studentInformation: {
+    type: 'object',
+    required: ['studentId', 'firstName', 'lastName', 'email'],
+    properties: {
+      studentId: { type: 'string', description: 'Student ID' },
+      firstName: { type: 'string', description: 'Student first name' },
+      lastName: { type: 'string', description: 'Student last name' },
+      email: { type: 'string', format: 'email' },
 
-}; // <--- The extra closing brace was likely here, causing the SyntaxError
+      // Array of enrolled courses
+      coursesEnrolled: {
+        type: 'array',
+        description: 'List of courses the student is enrolled in',
+      }
+    }
+  },
+
+  courseEnrollment: {
+    type: 'object',
+    required: ['courseCode'],
+    properties: {
+      courseCode: {
+        type: 'string',
+        description: 'Linked course code (e.g., CS101)'
+      },
+      grades: {
+        type: 'array',
+        description: 'List of grades received for this course',
+        items: {
+          type: 'number'
+        }
+      },
+      enrollmentDate: {
+        type: 'string',
+        format: 'date-time',
+        description: 'Date the student enrolled in this course'
+      }
+    }
+  },
+
+  Course: {
+    type: 'object',
+    required: ['courseCode', 'title', 'units'],
+    properties: {
+      courseCode: { type: 'string', description: 'Course Code/ID' },
+      title: { type: 'string', description: 'Course Name' },
+      units: { type: 'string', description: 'Number of units' }
+    }
+  }
+}
+    
+  },
+
+};
 
 // Options for the swagger docs
 const options = {
   swaggerDefinition,
-  // IMPORTANT: Ensure these paths match the new file structure (no 'src/' prefix)
   apis: [
-    './routes/*.js', // Assuming your route files are here
+    './routes/*.js', 
     './models/*.js', 
-    './index.js' // Change to index.js if that is your main server file
+    './index.js' 
   ], 
 };
 
 // Initialize swagger-jsdoc
 const swaggerSpec = swaggerJSDoc(options);
 
-
 export default swaggerSpec;
+
 
 
 
