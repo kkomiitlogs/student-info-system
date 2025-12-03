@@ -4,10 +4,9 @@ import CourseInformation from '../models/course-information.js';
 // Inside ./controllers/courseController.js (createCourse)
 export async function createCourse(req, res) {
     try {
-        const { code, courseCode, title, units } = req.body;
+        const { courseCode, title, units } = req.body;
 
         const newCourse = new CourseInformation({ 
-            code,       // Now correctly populating 'code'
             courseCode, // Now correctly populating 'courseCode'
             title,
             units 
