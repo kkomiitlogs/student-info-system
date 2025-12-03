@@ -1,4 +1,5 @@
 import Student from "../models/student-information.js";
+import CourseInformation from "../models/course-information.js";
 
 // Function to handle POST /enroll
 export async function enrollStudent(req, res) {
