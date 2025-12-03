@@ -54,7 +54,7 @@ export async function getStudent(req, res) {
 // done http response
 export async function updateStudent(req, res) {
     try {
-        const { firstName, lastName email } = req.body;
+        const { firstName, lastName, email } = req.body;
         const targetStudentId = req.params.id;
         
         // Update by custom studentId
