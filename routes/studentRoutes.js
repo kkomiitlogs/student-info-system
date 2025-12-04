@@ -31,7 +31,7 @@ const router = express.Router();
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Student'
+ *                 $ref: '#/components/schemas/studentInformation'
  */
 router.get("/", getAllStudent);
 
@@ -46,14 +46,14 @@ router.get("/", getAllStudent);
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Student'
+ *             $ref: '#/components/schemas/studentInformation'
  *     responses:
  *       201:
  *         description: Student successfully created.
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Student'
+ *               $ref: '#/components/schemas/studentInformation'
  *       400:
  *         description: Invalid input or data.
  */
@@ -78,7 +78,7 @@ router.post("/", createStudent);
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Student'
+ *               $ref: '#/components/schemas/studentInformation'
  *       404:
  *         description: Student not found.
  */
@@ -102,14 +102,14 @@ router.get("/:id", getStudent);
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Student'
+ *             $ref: '#/components/schemas/studentInformation'
  *     responses:
  *       200:
  *         description: Student record updated successfully.
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Student'
+ *               $ref: '#/components/schemas/studentInformation'
  *       404:
  *         description: Student not found.
  */
