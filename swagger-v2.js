@@ -38,7 +38,7 @@ const swaggerDefinition = {
 
       // Array of enrolled courses
       coursesEnrolled: {
-        type: 'array',
+        type: 'string',
         description: 'List of courses the student is enrolled in',
       }
     }
@@ -96,6 +96,7 @@ const options = {
 const swaggerSpec = swaggerJSDoc(options);
 
 export default swaggerSpec;
+
 
 
 
